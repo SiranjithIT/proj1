@@ -1,0 +1,59 @@
+body {
+  font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+  background-image: url('../Images/BackGround.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background-color: white;
+  flex: 1;
+}
+
+.cont1 {
+  background-color: rgb(214, 245, 245);
+}
+
+.cont {
+  background-color: rgb(247, 241, 233);
+}
+
+.header {
+  width: 100%;
+  height: 15%;
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgb(0, 120, 173);
+}
+
+a {
+  text-decoration: none;
+}
+
+.fileIcon {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  height: 60px;
+  width: 60px;
+}
+
+h2 {
+  display: block;
+  text-align: center;
+}
+
+footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}

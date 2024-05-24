@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Processing Result</title>
+    <link rel="stylesheet" href="../static/Styles/result.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Document Processing</h2>
+        <div class="section">
+            <h3>Original Text:</h3>
+            <p>{{ original_text }}</p>
+        </div>
+        <div class="section">
+            <h3>Summarized Text:</h3>
+            <p>{{ summarized_text }}</p>
+        </div>
+        <div class="section">
+            <h3>Translated Text:</h3>
+            <p>{{ translated_text }}</p>
+        </div>
+        <a href="/logout" class="logout-button">Home</a>
+
+    </div>
+</body>
+</html>

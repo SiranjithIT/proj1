@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="static/Styles/UploadDocFinAdmin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>SecuSto</h1>
+        <h3>Welcome Admin</h3>
+        <a href="/logout" class="logout-button">Logout</a>
+    </div>
+    <div class="container">
+        <div class="cont">
+            <div style="margin-top: 2%;border: 1px solid white;">
+                <label for="fileInput">
+                    <img src="static/Images/file.png" class="fileIcon" alt="Upload Document">
+                    <h2>Click to Upload</h2>
+                </label>
+                <input type="file" id="fileInput" style="display: none;cursor:pointer;">
+            </div>
+        </div>
+        <div class="cont1">
+            <ul id="fileList">
+                {% for file in files %}
+                <li><b><i>File Name:</i></b> {{ file[1] }}, <a href="/retrieve4/{{ file[0] }}?filename={{ file[1] }}" download="{{ file[1] }}">Download</a></li>
+                {% endfor %}
+            </ul>
+            <div class="separation-line">
+                <h3> Administrator Operations</h3> 
+                <br>
+                <button id="updateButton" class="upd">Update</button>
+                <button id="deleteButton" class="del">Delete</button>
+                <br><br>
+
+                <div id="updateFormContainer"></div>
+                <div id="deleteFormContainer"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy;--.</p>
+    </footer>
+    <script src="static/Scripts/UploadDocFinAdmin.js"></script>
+</body>
+</html>

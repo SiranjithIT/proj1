@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditor page</title>
+    <link rel="stylesheet" href="../static/Styles/UploadDocaud.css">
+</head>
+<body>
+    <div class="header">
+        <h1>SecuSto</h1>
+        <h3>Welcome Auditor {{ aud_id }}</h3>
+        <a href="/logout" class="logout-button">Logout</a>
+    </div>
+    <div class="container">
+        <div class="cont">
+            <div style="margin-top: 2%;border: 1px solid white;">
+                <label for="fileInput">
+                    <img src="../static/Images/file.png" class="fileIcon" alt="Upload Document">
+                    <h2>Click to Upload</h2>
+                </label>
+                <input type="file" id="fileInput" style="display: none;cursor:pointer;">
+            </div>
+        </div>
+        <div class="cont1">
+            <ul id="fileList">
+                {% for file in files %}
+                <li><b><i>File Name:</i></b> {{ file[1] }}, <a href="/retrieve5/{{ file[0] }}?filename={{ file[1] }}" download="{{ file[1] }}">Download</a></li>
+                {% endfor %}
+            </ul>
+            <div class="separation-line">
+                <br>
+                <form id="fetchForm">
+                    <input type="number" placeholder="Client Id" id="client_id" name="client_id">
+                    <button type="submit">Fetch</button>
+                </form>
+                
+                <ul id="fileList1"></ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy;--.</p>
+    </footer>
+    <script src="../static/Scripts/UploadDocaud.js"></script>
+</body>
+</html>

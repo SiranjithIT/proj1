@@ -1,0 +1,106 @@
+body {
+    font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('../Images/background3.jpg');
+    background-size: cover;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.stat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: 500;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9f5ff;
+    border-left: 5px solid #007BFF;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#result, #plot {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+#result {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#plot img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form#prediction-form {
+    margin-top: 40px;
+}

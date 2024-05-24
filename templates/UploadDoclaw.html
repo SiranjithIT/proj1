@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/Styles/UploadDoc.css">
+</head>
+<body>
+    <div class="header">
+        <h1>SecuSto</h1>
+        <h3>Welcome User {{ user_id }}</h3>
+        <a href="/logout" class="logout-button">Logout</a>
+        <a href="/back">Back</a>
+    </div>
+
+    <div class="container">
+        <div class="cont">
+            <div style="margin-top: 2%;border: 1px solid white;">
+                <label for="fileInput">
+                    <img src="../static/Images/file.png" class="fileIcon" alt="Upload Document">
+                    <h2>Click to Upload</h2>
+                </label>
+                <input type="file" id="fileInput" style="display: none;cursor:pointer;">
+            </div>
+        </div>
+        <div class="cont1">
+            <ul id="fileList">
+                {% for file in files %}
+                <li>File Name: {{ file[1] }}, <a href="/retrieve/{{ file[0] }}?filename={{ file[1] }}" download="{{ file[1] }}">Download</a>
+                    {% if file[1].endswith('.pdf') or file[1].endswith('.doc') or file[1].endswith('.docx') %}
+                    <form action="/analyze/{{ file[0] }}" method="get" style="display:inline;">
+                        <input type="hidden" name="filename" value="{{ file[1] }}">
+                        <button type="submit" class="analyze-button">Analyze</button>
+                    </form> 
+                    
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; No copyrights available.</p>
+    </footer>
+    <script src="../static/Scripts/UploadDoc.js"></script>
+</body>
+</html>
